@@ -267,25 +267,25 @@ a {
 
 .hero-lockup {
   justify-items: center;
-  gap: 16px;
+  gap: 10px;
   text-align: center;
 }
 
 .hero-brand-mark {
-  width: clamp(88px, 11vw, 120px);
+  width: clamp(88px, 11vw, 116px);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.34));
 }
 
 .hero-wordmark {
-  width: min(360px, 70vw);
+  width: min(320px, 62vw);
   height: auto;
   display: block;
 }
 
 .hero-tagline {
-  width: min(320px, 62vw);
+  width: min(240px, 48vw);
   height: auto;
   display: block;
   opacity: 0.82;
