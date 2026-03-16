@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
 
 :root {
   --bg: #07131f;
@@ -7,6 +7,7 @@
   --border: rgba(122, 188, 216, 0.18);
   --text-main: #e9f3ff;
   --text-soft: #9bb2c7;
+  --text-dim: #73879d;
   --accent: #3fd0db;
   --accent-deep: #2293b5;
   --accent-warm: #ff8b5f;
@@ -90,6 +91,15 @@ a {
 .brand-word-stack {
   display: grid;
   gap: 2px;
+}
+
+.brand-name {
+  font-family: "Orbitron", "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-main);
 }
 
 .brand-wordmark {
@@ -180,19 +190,6 @@ a {
   overflow: hidden;
 }
 
-.hero::after {
-  content: "ᏣᎳᎩ ᏣᎳᎩ ᏣᎳᎩ";
-  position: absolute;
-  right: 26px;
-  top: 24px;
-  color: rgba(233, 243, 255, 0.08);
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.4rem, 4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  pointer-events: none;
-}
-
 .eyebrow {
   margin: 0;
   color: var(--accent);
@@ -213,6 +210,14 @@ a {
 .hero h1 {
   font-size: clamp(2.4rem, 5vw, 4.6rem);
   line-height: 0.98;
+}
+
+.brand-inline {
+  display: inline-block;
+  font-family: "Orbitron", "Space Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero-copy-strong {
@@ -303,26 +308,24 @@ a {
   color: var(--accent-deep);
 }
 
-.identity-ribbon {
+.heritage-note {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   width: fit-content;
-  padding: 10px 14px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgba(13, 27, 41, 0.88);
-  color: var(--text-main);
+  padding: 8px 0;
+  color: var(--text-dim);
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.identity-ribbon .syllabary {
+.syllabary-inline {
   color: var(--accent);
   font-size: 1rem;
+  font-weight: 700;
 }
 
 .section-grid {
@@ -373,19 +376,13 @@ a {
     line-height: 1.05;
   }
 
-  .hero::after {
-    right: 18px;
-    top: 18px;
-  }
-
   .brand-mark {
     width: 42px;
     height: 42px;
   }
 
-  .brand-wordmark,
-  .brand-tagline {
-    width: min(180px, 48vw);
+  .brand-name {
+    font-size: 0.92rem;
   }
 
   .section-grid {
