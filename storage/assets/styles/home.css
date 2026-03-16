@@ -48,11 +48,28 @@ body::before {
 }
 
 body::after {
-  opacity: 0.16;
+  opacity: 0.18;
   background:
+    linear-gradient(
+      90deg,
+      transparent 0 8%,
+      rgba(63, 208, 219, 0.03) 8% 10%,
+      transparent 10% 18%,
+      rgba(255, 139, 95, 0.03) 18% 20%,
+      transparent 20% 100%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 0 10%,
+      rgba(255, 255, 255, 0.02) 10% 12%,
+      transparent 12% 22%,
+      rgba(63, 208, 219, 0.025) 22% 24%,
+      transparent 24% 100%
+    ),
     radial-gradient(circle at 16% 16%, rgba(255, 255, 255, 0.9) 0 1px, transparent 2px),
     radial-gradient(circle at 75% 12%, rgba(63, 208, 219, 0.92) 0 2px, transparent 3px),
     radial-gradient(circle at 86% 34%, rgba(255, 139, 95, 0.82) 0 2px, transparent 3px);
+  background-size: 100% 100%, 100% 100%, auto, auto, auto;
 }
 
 a {
@@ -108,17 +125,10 @@ a {
   gap: 2px;
 }
 
-.brand-wordmark {
-  width: min(220px, 44vw);
+.brand-lockup-wordmark {
+  width: min(220px, 42vw);
   height: auto;
   display: block;
-}
-
-.brand-tagline {
-  width: min(220px, 44vw);
-  height: auto;
-  display: block;
-  opacity: 0.74;
 }
 
 .nav {
@@ -150,18 +160,6 @@ a {
   padding: 34px;
   margin-bottom: 22px;
   overflow: hidden;
-}
-
-.hero::after {
-  content: "ᏣᎳᎩ";
-  position: absolute;
-  right: 28px;
-  top: 26px;
-  color: rgba(237, 245, 255, 0.06);
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2rem, 6vw, 4.8rem);
-  font-weight: 700;
-  letter-spacing: 0.18em;
 }
 
 .hero-copy {
@@ -206,24 +204,24 @@ a {
   line-height: 1.7;
 }
 
-.identity-ribbon {
+.heritage-note {
   display: inline-flex;
   width: fit-content;
   align-items: center;
   gap: 10px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(14, 27, 41, 0.86);
+  padding: 8px 0;
+  color: var(--text-dim);
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.identity-ribbon .syllabary {
+.syllabary-inline {
   color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .cta-row {
@@ -267,10 +265,30 @@ a {
   border: 1px solid var(--border);
 }
 
-.mark-panel img {
-  width: min(260px, 60vw);
+.hero-lockup {
+  justify-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.hero-brand-mark {
+  width: clamp(88px, 11vw, 120px);
   height: auto;
+  object-fit: contain;
   filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.34));
+}
+
+.hero-wordmark {
+  width: min(360px, 70vw);
+  height: auto;
+  display: block;
+}
+
+.hero-tagline {
+  width: min(320px, 62vw);
+  height: auto;
+  display: block;
+  opacity: 0.82;
 }
 
 .signal-grid {
@@ -442,13 +460,8 @@ a {
   }
 
   .brand-wordmark,
-  .brand-tagline {
-    width: min(180px, 48vw);
-  }
-
-  .hero::after {
-    right: 18px;
-    top: 16px;
+  .brand-lockup-wordmark {
+    width: min(170px, 46vw);
   }
 
   .mark-panel {

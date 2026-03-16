@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
 
 :root {
   --bg: #07131f;
@@ -46,11 +46,28 @@ body::before {
 }
 
 body::after {
-  opacity: 0.14;
+  opacity: 0.18;
   background:
+    linear-gradient(
+      90deg,
+      transparent 0 8%,
+      rgba(63, 208, 219, 0.03) 8% 10%,
+      transparent 10% 18%,
+      rgba(255, 139, 95, 0.03) 18% 20%,
+      transparent 20% 100%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 0 10%,
+      rgba(255, 255, 255, 0.02) 10% 12%,
+      transparent 12% 22%,
+      rgba(63, 208, 219, 0.025) 22% 24%,
+      transparent 24% 100%
+    ),
     radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.95) 0 1px, transparent 2px),
     radial-gradient(circle at 72% 12%, rgba(63, 208, 219, 0.95) 0 2px, transparent 3px),
     radial-gradient(circle at 85% 28%, rgba(255, 139, 95, 0.85) 0 2px, transparent 3px);
+  background-size: 100% 100%, 100% 100%, auto, auto, auto;
 }
 
 a {
@@ -88,42 +105,22 @@ a {
   object-fit: contain;
 }
 
-.brand-word-stack {
-  display: grid;
-  gap: 2px;
-}
-
-.brand-name {
-  font-family: "Orbitron", "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-main);
-}
-
-.brand-wordmark {
-  width: min(220px, 44vw);
+.brand-lockup-wordmark {
+  width: min(220px, 42vw);
   height: auto;
   display: block;
-}
-
-.brand-tagline {
-  width: min(220px, 44vw);
-  height: auto;
-  display: block;
-  opacity: 0.72;
 }
 
 .hero-brand {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  justify-items: center;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
+  text-align: center;
 }
 
 .hero-brand-mark {
-  width: clamp(92px, 12vw, 132px);
+  width: clamp(88px, 11vw, 120px);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.28));
@@ -131,17 +128,18 @@ a {
 
 .hero-brand-copy {
   display: grid;
+  justify-items: center;
   gap: 8px;
 }
 
 .hero-wordmark {
-  width: min(430px, 72vw);
+  width: min(360px, 72vw);
   height: auto;
   display: block;
 }
 
 .hero-tagline {
-  width: min(380px, 64vw);
+  width: min(320px, 64vw);
   height: auto;
   display: block;
   opacity: 0.82;
@@ -210,14 +208,6 @@ a {
 .hero h1 {
   font-size: clamp(2.4rem, 5vw, 4.6rem);
   line-height: 0.98;
-}
-
-.brand-inline {
-  display: inline-block;
-  font-family: "Orbitron", "Space Grotesk", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .hero-copy-strong {
@@ -381,8 +371,8 @@ a {
     height: 42px;
   }
 
-  .brand-name {
-    font-size: 0.92rem;
+  .brand-lockup-wordmark {
+    width: min(170px, 46vw);
   }
 
   .section-grid {
