@@ -117,6 +117,23 @@ a {
   image-rendering: pixelated;
 }
 
+.brand-home-chip {
+  gap: 12px;
+}
+
+.brand-home-mark {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.brand-home-wordmark {
+  width: min(220px, 42vw);
+  height: auto;
+  display: block;
+}
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -406,6 +423,10 @@ a {
   .cta-link,
   .email-link {
     font-size: 9px;
+  }
+
+  .brand-home-wordmark {
+    width: min(170px, 44vw);
   }
 
   .hero-panel,

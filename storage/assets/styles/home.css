@@ -224,6 +224,10 @@ a {
   font-weight: 700;
 }
 
+.heritage-divider {
+  color: var(--text-dim);
+}
+
 .cta-row {
   display: flex;
   flex-wrap: wrap;
