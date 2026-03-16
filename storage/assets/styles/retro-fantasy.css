@@ -121,17 +121,19 @@ a {
   gap: 12px;
 }
 
-.brand-home-mark {
+.brand-chip .brand-home-mark {
   width: 32px;
   height: 32px;
   object-fit: contain;
   image-rendering: auto;
 }
 
-.brand-home-wordmark {
+.brand-chip .brand-home-wordmark {
   width: min(220px, 42vw);
   height: auto;
   display: block;
+  object-fit: contain;
+  image-rendering: auto;
 }
 
 .nav {
@@ -425,7 +427,7 @@ a {
     font-size: 9px;
   }
 
-  .brand-home-wordmark {
+  .brand-chip .brand-home-wordmark {
     width: min(170px, 44vw);
   }
 
