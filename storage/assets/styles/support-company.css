@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
 
 :root {
-  --bg: #eef2f7;
-  --surface: rgba(255, 255, 255, 0.86);
-  --surface-strong: #ffffff;
-  --border: rgba(24, 39, 75, 0.12);
-  --text-main: #172033;
-  --text-soft: #4a5872;
-  --accent: #0f8c95;
-  --accent-deep: #135c76;
+  --bg: #07131f;
+  --surface: rgba(10, 21, 34, 0.82);
+  --surface-strong: rgba(14, 27, 42, 0.96);
+  --border: rgba(122, 188, 216, 0.18);
+  --text-main: #e9f3ff;
+  --text-soft: #9bb2c7;
+  --accent: #3fd0db;
+  --accent-deep: #2293b5;
   --accent-warm: #ff8b5f;
-  --shadow: 0 24px 80px rgba(23, 32, 51, 0.12);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
 }
 
 * {
@@ -23,9 +23,33 @@ body {
   color: var(--text-main);
   font-family: "IBM Plex Sans", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(15, 140, 149, 0.14), transparent 30%),
-    radial-gradient(circle at right, rgba(255, 139, 95, 0.12), transparent 24%),
-    linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+    radial-gradient(circle at top left, rgba(63, 208, 219, 0.18), transparent 26%),
+    radial-gradient(circle at right, rgba(255, 139, 95, 0.14), transparent 22%),
+    linear-gradient(180deg, #0c1d2e 0%, var(--bg) 100%);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  opacity: 0.1;
+  background-image:
+    linear-gradient(rgba(63, 208, 219, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(63, 208, 219, 0.14) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+body::after {
+  opacity: 0.14;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.95) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 12%, rgba(63, 208, 219, 0.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 85% 28%, rgba(255, 139, 95, 0.85) 0 2px, transparent 3px);
 }
 
 a {
@@ -33,6 +57,8 @@ a {
 }
 
 .page-shell {
+  position: relative;
+  z-index: 1;
   max-width: 1120px;
   margin: 0 auto;
   padding: 28px 20px 56px;
@@ -55,25 +81,60 @@ a {
   color: var(--text-main);
 }
 
-.brand-lockup img {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
-.brand-name {
-  display: block;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.brand-word-stack {
+  display: grid;
+  gap: 2px;
 }
 
-.brand-subtitle {
+.brand-wordmark {
+  width: min(220px, 44vw);
+  height: auto;
   display: block;
-  font-size: 0.95rem;
-  color: var(--text-soft);
+}
+
+.brand-tagline {
+  width: min(220px, 44vw);
+  height: auto;
+  display: block;
+  opacity: 0.72;
+}
+
+.hero-brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-brand-mark {
+  width: clamp(92px, 12vw, 132px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.28));
+}
+
+.hero-brand-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.hero-wordmark {
+  width: min(430px, 72vw);
+  height: auto;
+  display: block;
+}
+
+.hero-tagline {
+  width: min(380px, 64vw);
+  height: auto;
+  display: block;
+  opacity: 0.82;
 }
 
 .nav {
@@ -86,7 +147,7 @@ a {
   padding: 10px 14px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(11, 25, 39, 0.82);
   text-decoration: none;
   color: var(--text-main);
   font-weight: 600;
@@ -116,6 +177,20 @@ a {
   gap: 20px;
   padding: 36px;
   margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "ᏣᎳᎩ ᏣᎳᎩ ᏣᎳᎩ";
+  position: absolute;
+  right: 26px;
+  top: 24px;
+  color: rgba(233, 243, 255, 0.08);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.4rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  pointer-events: none;
 }
 
 .eyebrow {
@@ -138,6 +213,10 @@ a {
 .hero h1 {
   font-size: clamp(2.4rem, 5vw, 4.6rem);
   line-height: 0.98;
+}
+
+.hero-copy-strong {
+  color: var(--text-main);
 }
 
 .hero p,
@@ -224,6 +303,57 @@ a {
   color: var(--accent-deep);
 }
 
+.identity-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(13, 27, 41, 0.88);
+  color: var(--text-main);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.identity-ribbon .syllabary {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.signal-panel {
+  padding: 24px;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(19, 38, 59, 0.92) 0%, rgba(9, 19, 31, 0.96) 100%);
+  border: 1px solid var(--border);
+}
+
+.signal-panel strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text-main);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.signal-panel p {
+  margin: 0;
+}
+
 .footer-card {
   margin-top: 22px;
   padding: 20px 24px;
@@ -241,5 +371,24 @@ a {
 
   .hero h1 {
     line-height: 1.05;
+  }
+
+  .hero::after {
+    right: 18px;
+    top: 18px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-wordmark,
+  .brand-tagline {
+    width: min(180px, 48vw);
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
   }
 }
