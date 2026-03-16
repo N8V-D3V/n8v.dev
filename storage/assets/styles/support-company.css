@@ -113,10 +113,11 @@ a {
 
 .hero-brand {
   display: grid;
-  justify-items: center;
+  grid-template-columns: auto minmax(0, 1fr);
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  text-align: center;
+  gap: 18px;
+  text-align: left;
 }
 
 .hero-brand-mark {
@@ -128,18 +129,18 @@ a {
 
 .hero-brand-copy {
   display: grid;
-  justify-items: center;
-  gap: 8px;
+  justify-items: start;
+  gap: 6px;
 }
 
 .hero-wordmark {
-  width: min(320px, 62vw);
+  width: min(280px, 44vw);
   height: auto;
   display: block;
 }
 
 .hero-tagline {
-  width: min(240px, 48vw);
+  width: min(220px, 34vw);
   height: auto;
   display: block;
   opacity: 0.82;
@@ -373,6 +374,25 @@ a {
 
   .brand-lockup-wordmark {
     width: min(170px, 46vw);
+  }
+
+  .hero-brand {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .hero-brand-copy {
+    justify-items: center;
+  }
+
+  .hero-wordmark {
+    width: min(260px, 62vw);
+  }
+
+  .hero-tagline {
+    width: min(200px, 48vw);
   }
 
   .section-grid {

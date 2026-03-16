@@ -266,9 +266,11 @@ a {
 }
 
 .hero-lockup {
-  justify-items: center;
-  gap: 10px;
-  text-align: center;
+  grid-template-columns: auto minmax(0, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  text-align: left;
 }
 
 .hero-brand-mark {
@@ -279,16 +281,22 @@ a {
 }
 
 .hero-wordmark {
-  width: min(320px, 62vw);
+  width: min(280px, 44vw);
   height: auto;
   display: block;
 }
 
 .hero-tagline {
-  width: min(240px, 48vw);
+  width: min(220px, 34vw);
   height: auto;
   display: block;
   opacity: 0.82;
+}
+
+.hero-brand-copy {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
 }
 
 .signal-grid {
@@ -466,5 +474,24 @@ a {
 
   .mark-panel {
     min-height: 260px;
+  }
+
+  .hero-lockup {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .hero-brand-copy {
+    justify-items: center;
+  }
+
+  .hero-wordmark {
+    width: min(260px, 62vw);
+  }
+
+  .hero-tagline {
+    width: min(200px, 48vw);
   }
 }
