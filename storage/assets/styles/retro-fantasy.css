@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+:root {
+  --bg-top: #201032;
+  --bg-bottom: #090612;
+  --sky-glow: rgba(104, 224, 255, 0.14);
+  --panel: rgba(14, 17, 31, 0.88);
+  --panel-strong: rgba(10, 12, 23, 0.94);
+  --panel-outline: #f7d56d;
+  --panel-shadow: #0a0813;
+  --text-main: #f7f0d0;
+  --text-soft: #cfc6aa;
+  --text-dim: #93896f;
+  --accent: #7cf2ff;
+  --accent-strong: #50c5ff;
+  --accent-alt: #ff9f6e;
+  --success: #7ef07a;
+  --danger: #ff7a7a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text-main);
+  font-family: "VT323", monospace;
+  background:
+    radial-gradient(circle at top, var(--sky-glow), transparent 35%),
+    linear-gradient(180deg, var(--bg-top) 0%, #120a1e 45%, var(--bg-bottom) 100%);
+  letter-spacing: 0.02em;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+body::after {
+  opacity: 0.22;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 245, 171, 0.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 10%, rgba(124, 242, 255, 0.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 24%, rgba(255, 255, 255, 0.85) 0 1px, transparent 2px),
+    radial-gradient(circle at 30% 12%, rgba(255, 255, 255, 0.85) 0 1px, transparent 2px);
+}
+
+a {
+  color: var(--accent);
+}
+
+.page-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.brand-chip,
+.nav a,
+.cta-link,
+.tag,
+.feature-list li,
+.detail-list li,
+.info-card,
+.notice-panel,
+.footer-bar,
+.hero-panel,
+.content-panel {
+  border: 3px solid #000;
+  box-shadow: 0 0 0 3px var(--panel-outline), 8px 8px 0 var(--panel-shadow);
+}
+
+.brand-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--text-main);
+  background: linear-gradient(180deg, #24345b 0%, #12192f 100%);
+  font-family: "Press Start 2P", monospace;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.brand-chip img {
+  width: 28px;
+  height: 28px;
+  image-rendering: pixelated;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav a {
+  padding: 10px 12px;
+  color: var(--text-main);
+  text-decoration: none;
+  background: linear-gradient(180deg, #5a3673 0%, #2b153f 100%);
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.nav a:hover,
+.nav a:focus-visible,
+.cta-link:hover,
+.cta-link:focus-visible {
+  transform: translate(-2px, -2px);
+}
+
+.hero-panel,
+.content-panel {
+  background: linear-gradient(180deg, rgba(20, 25, 47, 0.96) 0%, var(--panel) 100%);
+  padding: 26px 24px;
+}
+
+.hero-panel {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 22px;
+  align-items: center;
+}
+
+.hero-content {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-media {
+  display: grid;
+  gap: 14px;
+}
+
+.art-frame,
+.art-card,
+.badge-frame {
+  border: 3px solid #000;
+  box-shadow: 0 0 0 3px var(--panel-outline), 8px 8px 0 var(--panel-shadow);
+  background: linear-gradient(180deg, rgba(20, 25, 47, 0.96) 0%, rgba(12, 15, 29, 0.96) 100%);
+}
+
+.art-frame {
+  padding: 14px;
+}
+
+.art-frame img,
+.art-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-splash {
+  max-height: 360px;
+  object-fit: contain;
+}
+
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.art-card {
+  padding: 12px;
+}
+
+.art-card.tall {
+  grid-row: span 2;
+}
+
+.art-label {
+  margin: 0 0 10px;
+  color: #ffe088;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: 0;
+  color: #fff3c1;
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(24px, 4vw, 42px);
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 #7c3d20;
+}
+
+.hero-subtitle,
+.hero-copy,
+.content-panel p,
+.feature-list li,
+.detail-list li,
+.footer-bar,
+.info-card,
+.notice-panel,
+.store-note {
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.35;
+}
+
+.hero-subtitle,
+.content-panel p,
+.store-note {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.hero-copy {
+  color: var(--text-main);
+  margin: 0;
+}
+
+.tag-row,
+.info-grid,
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tag {
+  padding: 10px 12px;
+  background: linear-gradient(180deg, rgba(49, 113, 87, 0.95) 0%, rgba(23, 59, 47, 0.95) 100%);
+  color: #dcffd3;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.cta-link {
+  display: inline-block;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #fff8df;
+  background: linear-gradient(180deg, var(--accent-alt) 0%, #ad4d24 100%);
+  font-family: "Press Start 2P", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.app-store-link {
+  display: inline-flex;
+  align-items: center;
+  max-width: 220px;
+}
+
+.app-store-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cta-link.secondary {
+  background: linear-gradient(180deg, #356b8a 0%, #183148 100%);
+}
+
+.content-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.section-title {
+  margin: 0;
+  color: #ffe088;
+  font-family: "Press Start 2P", monospace;
+  font-size: 16px;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.feature-list,
+.detail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.feature-list li,
+.detail-list li {
+  padding: 16px 18px;
+  background: linear-gradient(180deg, rgba(44, 29, 77, 0.96) 0%, rgba(20, 13, 37, 0.96) 100%);
+  color: var(--text-main);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.media-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.info-card,
+.notice-panel {
+  padding: 16px 18px;
+  background: linear-gradient(180deg, rgba(27, 56, 71, 0.96) 0%, rgba(13, 28, 36, 0.96) 100%);
+  color: var(--text-main);
+}
+
+.notice-panel {
+  background: linear-gradient(180deg, rgba(46, 61, 24, 0.96) 0%, rgba(24, 31, 14, 0.96) 100%);
+}
+
+.footer-bar {
+  margin-top: 20px;
+  padding: 16px 18px;
+  background: linear-gradient(180deg, rgba(19, 21, 31, 0.96) 0%, var(--panel-strong) 100%);
+  color: var(--text-dim);
+}
+
+.email-link {
+  color: #fff3c1;
+  font-family: "Press Start 2P", monospace;
+  font-size: 11px;
+  line-height: 1.8;
+  word-break: break-word;
+}
+
+.badge-frame {
+  display: inline-flex;
+  padding: 8px;
+}
+
+.theme-match {
+  --bg-top: #2c1234;
+  --bg-bottom: #0c0814;
+  --sky-glow: rgba(255, 155, 202, 0.18);
+  --panel-outline: #ffca7a;
+  --accent: #ffb6d9;
+  --accent-alt: #ff8a68;
+}
+
+.theme-math {
+  --bg-top: #112744;
+  --bg-bottom: #081018;
+  --sky-glow: rgba(98, 233, 255, 0.18);
+  --panel-outline: #f3d45b;
+  --accent: #84f1ff;
+  --accent-alt: #ff9862;
+}
+
+.theme-support {
+  --bg-top: #2a1d4b;
+  --bg-bottom: #0d0d18;
+  --sky-glow: rgba(181, 129, 255, 0.18);
+  --panel-outline: #e4c16d;
+  --accent: #99e4ff;
+  --accent-alt: #ff9b69;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding: 20px 14px 36px;
+  }
+
+  .brand-chip,
+  .nav a,
+  .tag,
+  .cta-link,
+  .email-link {
+    font-size: 9px;
+  }
+
+  .hero-panel,
+  .content-panel {
+    padding: 20px 16px;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .art-grid,
+  .media-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 14px;
+  }
+
+  .hero-subtitle,
+  .hero-copy,
+  .content-panel p,
+  .feature-list li,
+  .detail-list li,
+  .footer-bar,
+  .info-card,
+  .notice-panel,
+  .store-note {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --bg: #eef2f7;
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-strong: #ffffff;
+  --border: rgba(24, 39, 75, 0.12);
+  --text-main: #172033;
+  --text-soft: #4a5872;
+  --accent: #0f8c95;
+  --accent-deep: #135c76;
+  --accent-warm: #ff8b5f;
+  --shadow: 0 24px 80px rgba(23, 32, 51, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text-main);
+  font-family: "IBM Plex Sans", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(15, 140, 149, 0.14), transparent 30%),
+    radial-gradient(circle at right, rgba(255, 139, 95, 0.12), transparent 24%),
+    linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+}
+
+a {
+  color: var(--accent-deep);
+}
+
+.page-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 20px 56px;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-lockup img {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+.brand-name {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brand-subtitle {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav a {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.nav a:hover,
+.nav a:focus-visible,
+.primary-link:hover,
+.primary-link:focus-visible,
+.secondary-link:hover,
+.secondary-link:focus-visible {
+  transform: translateY(-1px);
+}
+
+.hero,
+.section,
+.footer-card {
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  display: grid;
+  gap: 20px;
+  padding: 36px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.section h2 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 0.98;
+}
+
+.hero p,
+.section p,
+.section li,
+.footer-card {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.hero p,
+.section p {
+  margin: 0;
+  max-width: 68ch;
+}
+
+.cta-row,
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.primary-link {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+  color: #fff;
+}
+
+.secondary-link {
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--text-main);
+}
+
+.section {
+  padding: 28px;
+}
+
+.section h2 {
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+  margin-bottom: 12px;
+}
+
+.cards {
+  margin-top: 18px;
+}
+
+.card {
+  flex: 1 1 240px;
+  padding: 22px;
+  border-radius: 22px;
+  background: var(--surface-strong);
+  border: 1px solid rgba(24, 39, 75, 0.09);
+}
+
+.card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.08rem;
+}
+
+.checklist {
+  margin: 14px 0 0;
+  padding-left: 20px;
+}
+
+.contact-link {
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.footer-card {
+  margin-top: 22px;
+  padding: 20px 24px;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding: 18px 14px 36px;
+  }
+
+  .hero,
+  .section {
+    padding: 24px;
+  }
+
+  .hero h1 {
+    line-height: 1.05;
+  }
+}
