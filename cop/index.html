@@ -184,11 +184,11 @@
 
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Behavior First</p>
+          <p class="eyebrow">Behavior Before Code</p>
           <h1>Contract-Oriented Programming</h1>
-          <p class="page-intro">A better way to build software with AI</p>
+          <p class="page-intro">AI can write code. It cannot define your system.</p>
           <p>
-            Define behavior first. Build second. Validate at every step.
+            COP gives the system shape first: define the behavior, prove the flow in stub form, then let implementation catch up.
           </p>
 
           <div class="cta-row">
@@ -206,21 +206,21 @@
                 <span class="cycle-step">1</span>
                 <div>
                   <strong>Contracts</strong>
-                  <span>Define the system behavior before the code starts filling in the gaps.</span>
+                  <span>Define the behavior up front so the system has a clear shape before code starts filling in the gaps.</span>
                 </div>
               </li>
               <li>
                 <span class="cycle-step">2</span>
                 <div>
                   <strong>Stubs</strong>
-                  <span>Make every part respond like the real system so the full flow can run end-to-end.</span>
+                  <span>Run the full flow end-to-end in stub form so the system can be reviewed and demoed before the real internals exist.</span>
                 </div>
               </li>
               <li>
                 <span class="cycle-step">3</span>
                 <div>
                   <strong>Implementation</strong>
-                  <span>Replace the fake parts with real logic while keeping the agreed behavior intact.</span>
+                  <span>Replace the fake parts with real logic while keeping the agreed behavior and validated flow intact.</span>
                 </div>
               </li>
               <li>
@@ -233,22 +233,22 @@
             </ol>
 
             <p class="panel-note">
-              The key move is simple: the stubbed system runs end-to-end before the real logic is finished.
+              One of the biggest advantages is simple: the system can run, be validated, and be demoed before the real logic is finished.
             </p>
           </div>
 
           <div class="signal-grid">
             <article class="signal-card">
               <h3>Clear direction</h3>
-              <p>The behavior stays visible, so implementation has guardrails instead of guesswork.</p>
+              <p>Contracts keep AI from guessing what the system is supposed to be while implementation is moving fast.</p>
             </article>
             <article class="signal-card">
-              <h3>AI with structure</h3>
-              <p>Fast code generation becomes useful when the system already knows what each part is supposed to do.</p>
+              <h3>Stub it early</h3>
+              <p>You can run the system end-to-end before the real logic is ready, which makes feedback earlier and cheaper.</p>
             </article>
             <article class="signal-card">
               <h3>Safer growth</h3>
-              <p>As systems get bigger, contracts keep the architecture understandable instead of letting details take over.</p>
+              <p>As the system grows, behavior stays visible and stable instead of disappearing into generated output.</p>
             </article>
           </div>
         </div>
@@ -297,9 +297,9 @@
       <section class="section">
         <div class="section-header">
           <p class="section-eyebrow">Why COP Exists</p>
-          <h2>AI makes it easy to generate code. It does not make structure optional.</h2>
+          <h2>AI accelerates output. COP protects structure.</h2>
           <p>
-            Without a behavior-first approach, AI can help produce a lot of code very quickly while the actual system becomes harder to trust.
+            AI makes it easier than ever to produce code quickly. It also makes it easier to create a mess quickly if the system has no stable shape underneath it.
           </p>
         </div>
 
@@ -307,14 +307,14 @@
           <article class="split-card">
             <h3>The problem</h3>
             <p>
-              AI moves fast. That is useful, but it also means systems can get messy fast. Logic spreads, patterns drift, and the intended behavior gets buried inside implementation details.
+              AI can generate a lot of code before anyone has really locked the behavior. That means logic spreads, patterns drift, and the intended system gets buried under implementation details almost as soon as the work starts.
             </p>
           </article>
 
           <article class="split-card">
             <h3>The COP answer</h3>
             <p>
-              COP keeps the system behavior visible from the start. That makes development more structured, more predictable, and far easier to scale with AI in the loop.
+              COP keeps the behavior visible from the start. Contracts define what matters, stubs prove the flow, and implementation fills in the details without quietly redefining the system along the way.
             </p>
           </article>
         </div>
@@ -323,9 +323,9 @@
       <section class="section">
         <div class="section-header">
           <p class="section-eyebrow">The COP Development Cycle</p>
-          <h2>Contracts first. Stubs next. Real code after that.</h2>
+          <h2>Contracts first. Demo the stubbed system. Then build for real.</h2>
           <p>
-            The cycle is simple on purpose. Each step makes the next one safer and easier to validate.
+            The cycle is simple on purpose. The goal is to prove the system early, while the parts are still cheap to change.
           </p>
         </div>
 
@@ -333,21 +333,21 @@
           <article class="cycle-card">
             <h3>1. Contract Alignment</h3>
             <p>
-              Agree on what the system must do before implementation starts. Make the behavior explicit enough that everyone can point to the same source of truth.
+              Agree on what the system must do before implementation starts. Make the behavior explicit enough that people and tools can point to the same source of truth.
             </p>
           </article>
 
           <article class="cycle-card">
             <h3>2. Stub Demo</h3>
             <p>
-              Build a stubbed version that runs end-to-end. The real logic is not finished yet, but the shape of the system is already alive and testable.
+              Build a stubbed version that runs end-to-end. The real logic is not finished yet, but the system can already be demoed, validated, and improved as a complete flow.
             </p>
           </article>
 
           <article class="cycle-card">
             <h3>3. Implementation</h3>
             <p>
-              Replace stubs with production logic module by module. Because the behavior is already defined, implementation has a clear target.
+              Replace stubs with production logic module by module. Because the behavior and flow are already defined, implementation has a clear target instead of a moving one.
             </p>
           </article>
 
@@ -390,6 +390,10 @@
             </p>
           </article>
         </div>
+
+        <p class="cta-note">
+          COP is an evolving system, refined through real project use and shared in public as the method gets sharper.
+        </p>
       </section>
 
       <section class="section">
@@ -422,21 +426,44 @@
 
       <section class="section" id="start-here">
         <div class="section-header">
-          <p class="section-eyebrow">Start Here</p>
-          <h2>Explore it, try it, and follow where it goes next.</h2>
+          <p class="section-eyebrow">How To Start</p>
+          <h2>Try it on one real feature.</h2>
           <p>
-            COP is meant to be used. If the approach clicks, the next step is to try it on a real workflow and see how much clearer the build becomes.
+            You do not need to redesign your whole system to try COP. Start with one feature, run the cycle, and let the clarity compound from there.
           </p>
         </div>
 
+        <div class="path-grid">
+          <article class="path-card">
+            <h3>1. Write one contract</h3>
+            <p>
+              Pick a single feature and define the behavior clearly enough that everyone agrees on what success looks like.
+            </p>
+          </article>
+
+          <article class="path-card">
+            <h3>2. Stub the full flow</h3>
+            <p>
+              Make the feature run end-to-end in stub form so you can validate the system before real logic slows you down.
+            </p>
+          </article>
+
+          <article class="path-card">
+            <h3>3. Replace stubs with logic</h3>
+            <p>
+              Fill in the real modules step by step while keeping the contract and flow stable underneath.
+            </p>
+          </article>
+        </div>
+
         <div class="cta-row">
-          <a class="cta-primary" href="#">Explore the GitHub Template Repo</a>
+          <a class="cta-primary" href="https://github.com/N8V-D3V/cop-starter-kit">Explore the GitHub Template Repo</a>
           <a class="cta-secondary" href="mailto:support@n8v.dev?subject=COP%20Interest">Try COP Yourself</a>
           <a class="cta-secondary" href="/">Follow Progress</a>
         </div>
 
         <p class="cta-note">
-          The template repo link is a placeholder until the public starter is published.
+          The starter kit is live and ready to explore on GitHub.
         </p>
       </section>
 
