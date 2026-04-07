@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="/storage/assets/images/brand/n8v-d3v-favicon.png">
+    <link rel="apple-touch-icon" href="/storage/assets/images/brand/n8v-d3v-favicon.png">
+    <title>Contract-Oriented Programming - N8V D3V</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Contract-Oriented Programming is a behavior-first way to build software with AI using contracts, stubs, and implementation."
+    >
+    <link rel="stylesheet" href="/storage/assets/styles/home.css">
+    <style>
+      .cop-panel {
+        display: grid;
+        gap: 18px;
+        align-content: start;
+        text-align: left;
+      }
+
+      .cop-panel .eyebrow,
+      .cop-panel .panel-note {
+        width: 100%;
+      }
+
+      .cycle-list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .cycle-list li {
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+        padding: 14px 16px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: rgba(12, 26, 40, 0.78);
+      }
+
+      .cycle-step {
+        display: inline-grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, rgba(63, 208, 219, 0.22) 0%, rgba(34, 147, 181, 0.42) 100%);
+        color: var(--text-main);
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+      }
+
+      .cycle-list strong,
+      .cop-grid h3,
+      .difference-list strong,
+      .proof-grid h3 {
+        color: var(--text-main);
+        font-family: "Space Grotesk", sans-serif;
+        letter-spacing: -0.02em;
+      }
+
+      .cycle-list span,
+      .panel-note,
+      .eyebrow-note {
+        color: var(--text-soft);
+        line-height: 1.6;
+      }
+
+      .cop-grid,
+      .cycle-grid,
+      .proof-grid,
+      .split-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .cop-grid,
+      .cycle-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .proof-grid,
+      .split-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cop-card,
+      .cycle-card,
+      .split-card {
+        padding: 24px;
+        border-radius: 24px;
+        border: 1px solid var(--border);
+        background: var(--surface-soft);
+      }
+
+      .cop-card h3,
+      .cycle-card h3,
+      .split-card h3,
+      .proof-grid h3 {
+        margin: 0 0 10px;
+        font-size: 1.18rem;
+      }
+
+      .cop-card p,
+      .cycle-card p,
+      .split-card p {
+        margin: 0;
+      }
+
+      .difference-wrap {
+        padding: 24px;
+        border-radius: 24px;
+        border: 1px solid var(--border);
+        background: var(--surface-soft);
+      }
+
+      .difference-list {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .difference-list li {
+        padding: 0 0 14px;
+        border-bottom: 1px solid rgba(124, 187, 217, 0.12);
+      }
+
+      .difference-list li:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .difference-list strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .proof-grid .about-card {
+        display: grid;
+        gap: 12px;
+      }
+
+      .proof-grid p + p {
+        margin-top: 0;
+      }
+
+      .cta-note {
+        margin-top: 12px;
+        color: var(--text-dim);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 900px) {
+        .cop-grid,
+        .cycle-grid,
+        .proof-grid,
+        .split-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand-lockup" href="/">
+          <img class="brand-mark" src="/storage/assets/images/brand/n8v-d3v-mark-v4.png" alt="N8V D3V mark">
+          <img class="brand-lockup-wordmark" src="/storage/assets/images/brand/n8v-d3v-wordmark-v4.png" alt="N8V D3V">
+        </a>
+
+        <nav class="nav" aria-label="Site">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/support">Support</a>
+          <a href="/commerce/schools">School Platform</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Behavior First</p>
+          <h1>Contract-Oriented Programming</h1>
+          <p class="page-intro">A better way to build software with AI</p>
+          <p>
+            Define behavior first. Build second. Validate at every step.
+          </p>
+
+          <div class="cta-row">
+            <a class="cta-primary" href="#start-here">Start Here</a>
+            <a class="cta-secondary" href="#real-example">See Real Projects</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="mark-panel cop-panel">
+            <p class="eyebrow">Development Cycle</p>
+
+            <ol class="cycle-list">
+              <li>
+                <span class="cycle-step">1</span>
+                <div>
+                  <strong>Contracts</strong>
+                  <span>Define the system behavior before the code starts filling in the gaps.</span>
+                </div>
+              </li>
+              <li>
+                <span class="cycle-step">2</span>
+                <div>
+                  <strong>Stubs</strong>
+                  <span>Make every part respond like the real system so the full flow can run end-to-end.</span>
+                </div>
+              </li>
+              <li>
+                <span class="cycle-step">3</span>
+                <div>
+                  <strong>Implementation</strong>
+                  <span>Replace the fake parts with real logic while keeping the agreed behavior intact.</span>
+                </div>
+              </li>
+              <li>
+                <span class="cycle-step">4</span>
+                <div>
+                  <strong>Iteration</strong>
+                  <span>Tighten the contracts, rerun the flow, and keep improving without losing the shape of the system.</span>
+                </div>
+              </li>
+            </ol>
+
+            <p class="panel-note">
+              The key move is simple: the stubbed system runs end-to-end before the real logic is finished.
+            </p>
+          </div>
+
+          <div class="signal-grid">
+            <article class="signal-card">
+              <h3>Clear direction</h3>
+              <p>The behavior stays visible, so implementation has guardrails instead of guesswork.</p>
+            </article>
+            <article class="signal-card">
+              <h3>AI with structure</h3>
+              <p>Fast code generation becomes useful when the system already knows what each part is supposed to do.</p>
+            </article>
+            <article class="signal-card">
+              <h3>Safer growth</h3>
+              <p>As systems get bigger, contracts keep the architecture understandable instead of letting details take over.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <p class="section-eyebrow">What Is COP?</p>
+          <h2>It starts with behavior, not implementation.</h2>
+          <p>
+            Contract-Oriented Programming is a way of building systems where the expected behavior is defined first, then proven with stubs, then filled in with real code.
+          </p>
+        </div>
+
+        <div class="cop-grid">
+          <article class="cop-card">
+            <h3>Contracts define behavior</h3>
+            <p>
+              Contracts say what the system should do, what goes in, what comes out, and what counts as valid.
+            </p>
+          </article>
+
+          <article class="cop-card">
+            <h3>Protocols define capabilities</h3>
+            <p>
+              Protocols describe the jobs a part of the system can perform without locking the design to one implementation too early.
+            </p>
+          </article>
+
+          <article class="cop-card">
+            <h3>Modules implement capabilities</h3>
+            <p>
+              Modules are where the real logic lives. Their job is to satisfy the contract, not quietly redefine it.
+            </p>
+          </article>
+
+          <article class="cop-card">
+            <h3>Orchestrators coordinate the flow</h3>
+            <p>
+              Orchestrators connect the pieces so the system can move from one step to the next in a controlled, testable way.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <p class="section-eyebrow">Why COP Exists</p>
+          <h2>AI makes it easy to generate code. It does not make structure optional.</h2>
+          <p>
+            Without a behavior-first approach, AI can help produce a lot of code very quickly while the actual system becomes harder to trust.
+          </p>
+        </div>
+
+        <div class="split-grid">
+          <article class="split-card">
+            <h3>The problem</h3>
+            <p>
+              AI moves fast. That is useful, but it also means systems can get messy fast. Logic spreads, patterns drift, and the intended behavior gets buried inside implementation details.
+            </p>
+          </article>
+
+          <article class="split-card">
+            <h3>The COP answer</h3>
+            <p>
+              COP keeps the system behavior visible from the start. That makes development more structured, more predictable, and far easier to scale with AI in the loop.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <p class="section-eyebrow">The COP Development Cycle</p>
+          <h2>Contracts first. Stubs next. Real code after that.</h2>
+          <p>
+            The cycle is simple on purpose. Each step makes the next one safer and easier to validate.
+          </p>
+        </div>
+
+        <div class="cycle-grid">
+          <article class="cycle-card">
+            <h3>1. Contract Alignment</h3>
+            <p>
+              Agree on what the system must do before implementation starts. Make the behavior explicit enough that everyone can point to the same source of truth.
+            </p>
+          </article>
+
+          <article class="cycle-card">
+            <h3>2. Stub Demo</h3>
+            <p>
+              Build a stubbed version that runs end-to-end. The real logic is not finished yet, but the shape of the system is already alive and testable.
+            </p>
+          </article>
+
+          <article class="cycle-card">
+            <h3>3. Implementation</h3>
+            <p>
+              Replace stubs with production logic module by module. Because the behavior is already defined, implementation has a clear target.
+            </p>
+          </article>
+
+          <article class="cycle-card">
+            <h3>4. Iterate</h3>
+            <p>
+              Refine the contracts, improve the modules, and keep validating the full flow. The system grows without losing its shape.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="real-example">
+        <div class="section-header">
+          <p class="section-eyebrow">Real Example</p>
+          <h2>This is not theory.</h2>
+          <p>
+            COP is already being used to build real systems with real moving parts.
+          </p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="about-card">
+            <h3>PerchNotes</h3>
+            <p>
+              PerchNotes uses COP to shape an image-to-notes-to-audio pipeline before each module is fully wired.
+            </p>
+            <p>
+              That means the full path can be demonstrated early, validated quickly, and improved module by module without losing the intended behavior.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <h3>Kanati + Selu</h3>
+            <p>
+              Kanati and Selu are being built as a connected POS and ticketing ecosystem using COP as the development model.
+            </p>
+            <p>
+              Contracts keep the system understandable across multiple domains, while stubs make it possible to prove the flow before every piece is production-ready.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <p class="section-eyebrow">What Makes COP Different</p>
+          <h2>It gives fast development a stable frame.</h2>
+        </div>
+
+        <div class="difference-wrap">
+          <ul class="difference-list">
+            <li>
+              <strong>Behavior before implementation</strong>
+              The system is described clearly before the code gets complicated.
+            </li>
+            <li>
+              <strong>Stub-first development</strong>
+              The flow works end-to-end early, even before the real internals are finished.
+            </li>
+            <li>
+              <strong>Contracts as source of truth</strong>
+              The architecture stays anchored to agreed behavior instead of drifting with each implementation pass.
+            </li>
+            <li>
+              <strong>Works with AI instead of fighting it</strong>
+              AI can move quickly without turning the codebase into a pile of disconnected guesses.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="start-here">
+        <div class="section-header">
+          <p class="section-eyebrow">Start Here</p>
+          <h2>Explore it, try it, and follow where it goes next.</h2>
+          <p>
+            COP is meant to be used. If the approach clicks, the next step is to try it on a real workflow and see how much clearer the build becomes.
+          </p>
+        </div>
+
+        <div class="cta-row">
+          <a class="cta-primary" href="#">Explore the GitHub Template Repo</a>
+          <a class="cta-secondary" href="mailto:support@n8v.dev?subject=COP%20Interest">Try COP Yourself</a>
+          <a class="cta-secondary" href="/">Follow Progress</a>
+        </div>
+
+        <p class="cta-note">
+          The template repo link is a placeholder until the public starter is published.
+        </p>
+      </section>
+
+      <footer class="footer-card">
+        Contract-Oriented Programming keeps the behavior visible, the workflow testable, and AI pointed at a clearer target.
+      </footer>
+    </main>
+  </body>
+</html>
