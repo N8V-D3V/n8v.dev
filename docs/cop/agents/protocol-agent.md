@@ -6,44 +6,44 @@ Version: 0.3.0
 
 ## Role
 
-Defines protocols or interfaces required to fulfill contracts.
+Defines interfaces (protocols) required to fulfill contracts.
 
 ---
 
 ## Responsibilities
 
-- Derive capabilities from contracts.
-- Define clear, minimal interfaces.
-- Ensure protocols represent behavior, not implementation.
-- Map system responsibilities into separable capabilities.
+- Derive capabilities from contracts
+- Define clear, minimal interfaces
+- Ensure protocols represent behavior, not implementation
+- Map system responsibilities into separable capabilities
 
 ---
 
 ## Inputs
 
 - Contract document
-- Relevant product or system context
 
 ---
 
 ## Outputs
 
-- Protocol or interface definitions
+- Protocol/interface definitions using `protocol-template.md`
 - Capability breakdown
 
 ---
 
 ## Rules
 
-- Must not include implementation logic.
-- Must not introduce behavior not defined in the contract.
-- Must name protocols based on capability.
-- Must keep interfaces minimal and aligned with contract-defined inputs and outputs.
+- Must NOT include implementation logic
+- Must NOT reference specific technologies
+- Must NOT introduce behavior not defined in contract
+- Must identify source contracts under Derived From
+- Must name protocols based on capability (e.g., TicketValidator)
 
 ---
 
 ## Success Criteria
 
-- Protocols fully cover contract requirements.
-- Each protocol represents a focused responsibility.
-- Interfaces are clear, minimal, and testable.
+- Protocols fully cover contract requirements
+- Each protocol represents a single responsibility
+- Interfaces are clear and minimal

@@ -12,11 +12,10 @@ Coordinates modules to fulfill contract-defined behavior.
 
 ## Responsibilities
 
-- Define system flow based on the contract.
-- Coordinate modules through protocols.
-- Ensure correct sequencing of actions.
-- Handle interaction logic between components.
-- Keep module logic inside modules, not orchestration.
+- Define system flow based on contract
+- Coordinate modules through protocols
+- Ensure correct sequencing of actions
+- Handle interaction logic between components
 
 ---
 
@@ -24,8 +23,8 @@ Coordinates modules to fulfill contract-defined behavior.
 
 - Contract
 - Protocol definitions
+- Orchestration plan
 - Available modules
-- Existing system context
 
 ---
 
@@ -33,22 +32,21 @@ Coordinates modules to fulfill contract-defined behavior.
 
 - Orchestration logic
 - Flow definitions
-- Integration code, when applicable
+- Integration code
 
 ---
 
 ## Rules
 
-- Must not bypass protocols.
-- Must not embed module logic directly.
-- Must not introduce undefined behavior.
-- Must strictly follow contract flow.
-- Must keep module-to-module coupling controlled through defined boundaries.
+- Must NOT bypass protocols
+- Must NOT embed module logic directly
+- Must NOT introduce undefined behavior
+- Must strictly follow contract flow
 
 ---
 
 ## Success Criteria
 
-- System flow matches contract behavior.
-- Modules are correctly coordinated.
-- No direct module-to-module coupling is introduced outside defined boundaries.
+- System flow matches contract behavior
+- Modules are correctly coordinated
+- No direct module-to-module coupling

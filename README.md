@@ -28,13 +28,17 @@ Included structure:
 
 - `docs/cop/manifest.human.md`
 - `docs/cop/manifesto.agent.md`
+- `docs/cop/workflow.md`
 - `docs/cop/glossary.md`
 - `docs/cop/contract-template.md`
 - `docs/cop/contract-template-usage.md`
+- `docs/cop/protocol-template.md`
+- `docs/cop/architecture-plan-template.md`
 - `docs/cop/report-template.md`
 - `docs/cop/product/product-vision.md`
 - `docs/cop/agents/contract-agent.md`
 - `docs/cop/agents/protocol-agent.md`
+- `docs/cop/agents/architecture-agent.md`
 - `docs/cop/agents/module-agent.md`
 - `docs/cop/agents/orchestrator-agent.md`
 - `docs/cop/agents/validation-agent.md`

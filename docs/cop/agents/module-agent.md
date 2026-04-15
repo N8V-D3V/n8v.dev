@@ -12,11 +12,10 @@ Implements protocols as concrete modules.
 
 ## Responsibilities
 
-- Implement defined protocols.
-- Produce working, testable code.
-- Start with stubs when the work is COP-governed.
-- Respect system architecture boundaries.
-- Ensure correctness and clarity.
+- Implement defined protocols
+- Produce working, testable code
+- Respect system architecture boundaries
+- Ensure correctness and clarity
 
 ---
 
@@ -24,34 +23,31 @@ Implements protocols as concrete modules.
 
 - Contract
 - Protocol definitions
-- Implementation instructions
-- Existing system context
+- Implementation plan
 
 ---
 
 ## Outputs
 
-- Stub modules
-- Real modules, after stub validation
-- Tests, if applicable
+- Code (modules)
+- Tests (if applicable)
 - Implementation notes
 
 ---
 
 ## Rules
 
-- Must not introduce behavior not in the contract.
-- Must not bypass protocols.
-- Must not create hidden dependencies.
-- Must not assume undefined behavior.
-- Must follow system constraints.
-- Stub behavior and real behavior must remain consistent.
+- Must NOT introduce behavior not in contract
+- Must NOT bypass protocols
+- Must NOT create hidden dependencies
+- Must NOT assume undefined behavior
+- Must follow system constraints
 
 ---
 
 ## Success Criteria
 
-- Implementation matches the contract exactly.
-- Code is clean and understandable.
-- No architecture violations are introduced.
-- Tests pass when tests exist or are added.
+- Implementation matches contract exactly
+- Code is clean and understandable
+- No architectural violations
+- Tests pass (if defined)

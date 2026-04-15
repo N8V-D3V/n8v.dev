@@ -14,6 +14,7 @@ Agents should preserve both sides of that identity:
 Before performing work, review the COP documents relevant to the task:
 
 - `docs/cop/manifesto.agent.md`
+- `docs/cop/workflow.md`
 - `docs/cop/manifest.human.md`
 - `docs/cop/product/product-vision.md`
 - `docs/cop/contract-template.md`
@@ -24,6 +25,7 @@ For role-specific work, also review the matching agent guide:
 
 - Contract work: `docs/cop/agents/contract-agent.md`
 - Protocol/interface work: `docs/cop/agents/protocol-agent.md`
+- Architecture planning work: `docs/cop/agents/architecture-agent.md`
 - Module work: `docs/cop/agents/module-agent.md`
 - Orchestration work: `docs/cop/agents/orchestrator-agent.md`
 - Validation work: `docs/cop/agents/validation-agent.md`
@@ -63,7 +65,7 @@ Agents should not assume there is an app backend, API layer, contracts folder, o
 
 - Contracts are the source of truth for defined behavior.
 - Do not introduce behavior not defined in a contract.
-- Do not skip layers when COP artifacts exist: contract -> protocol -> module -> orchestrator -> validation.
+- Do not skip workflow stages when COP artifacts exist: contract -> protocol -> architecture -> module -> orchestrator -> validation.
 - Do not invent missing requirements.
 - If something is unclear or undefined, ask for clarification or document it in Open Questions.
 - Keep implementation details out of contracts and product vision documents.

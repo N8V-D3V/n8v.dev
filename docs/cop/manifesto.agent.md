@@ -1,4 +1,4 @@
-# Contract-Oriented Programming (COP) - Agent Manifesto
+# Contract-Oriented Programming (COP) — Agent Manifesto
 
 Version: 0.3.0
 
@@ -8,42 +8,41 @@ Version: 0.3.0
 
 You are operating within a system that follows Contract-Oriented Programming (COP).
 
-Follow these rules strictly when defining or changing system behavior.
+You must follow these rules strictly.
 
 ---
 
-## 1. Contracts Are The Source Of Truth
+## 1. Contracts are the source of truth
 
-- Contracts define system behavior.
-- Do not introduce behavior not defined in the contract.
-- If the contract is unclear, ask for clarification or record an open question.
+- Contracts define all system behavior
+- You must not introduce behavior not defined in the contract
+- If the contract is unclear, you must ask for clarification
 
 ---
 
-## 2. Do Not Skip Layers
+## 2. Do not skip workflow stages
 
-Respect the COP structure:
+You must respect the COP structure and workflow:
 
 1. Contracts
-2. Protocols
-3. Modules
-4. Orchestrators
-5. Validation
+2. Protocols (interfaces)
+3. Architecture (implementation planning)
+4. Modules (implementations)
+5. Orchestrators (coordination)
+6. Validation
 
-Do not:
-
-- implement modules without a contract when the work is COP-governed
+You must not:
+- implement modules without a contract
 - bypass protocols
 - create hidden dependencies
-- replace defined behavior with implementation guesses
+- proceed without validation
 
 ---
 
-## 3. Keep Implementation Details Out Of Contracts
+## 3. No implementation leakage into contracts
 
 When working on contracts:
-
-- do not include frameworks
+- do not include technologies
 - do not reference APIs
 - do not define code-level structures
 
@@ -51,142 +50,148 @@ Contracts describe behavior only.
 
 ---
 
-## 4. Respect Defined Inputs And Outputs
+## 4. Respect defined inputs and outputs
 
-- Do not add undocumented inputs.
-- Do not produce undocumented outputs.
-- All data flow must be explicitly defined.
+- Do not add undocumented inputs
+- Do not produce undocumented outputs
+- All data flow must be explicitly defined
 
 ---
 
-## 5. Failure Modes Are Required
+## 5. Failure modes are required
 
 Every system must define:
-
 - what can go wrong
 - how the system responds
 
-Do not assume a happy path only.
+Do not assume "happy path only."
 
 ---
 
-## 6. Do Not Invent Missing Behavior
+## 6. Do not invent missing behavior
 
 If something is not defined:
-
 - do not guess
 - do not assume
-- ask for clarification or mark it as an open question
+
+Instead:
+> ask for clarification or mark as an open question
 
 ---
 
-## 7. Follow Constraints Strictly
+## 7. Follow constraints strictly
 
-Constraints defined in contracts must not be violated.
+Constraints defined in contracts must never be violated.
 
 ---
 
-## 8. Prefer Explicitness Over Cleverness
+## 8. Prefer explicitness over cleverness
 
-Be clear, predictable, and consistent.
+- Be clear
+- Be predictable
+- Be consistent
 
 Avoid:
-
 - hidden logic
 - implicit assumptions
 - unnecessary abstraction
 
 ---
 
-## 9. Validation Is Required
+## 9. Validation is required
 
 When reviewing or implementing:
-
 - compare output against the contract
 - identify mismatches
 - report violations
 
 ---
 
-## 10. Produce Structured Outputs
+## 10. Produce structured outputs
 
 When working in COP:
-
 - follow defined templates
 - produce complete artifacts
 - ensure outputs are usable by other agents
+- preserve artifact handoffs from contract to protocol to architecture to module to orchestrator to validation
 
 ---
 
 ## 11. Prefer Feature-Based Structure
 
-Implementation should be organized around features and capabilities, not generic technical categories.
+Implementation must be organized around features (capabilities), not types.
 
-Avoid defaulting to folders such as:
+Do NOT organize code by:
+- models/
+- services/
+- utils/
+- controllers/
 
-- `models/`
-- `services/`
-- `utils/`
-- `controllers/`
+Instead, organize code by feature, where each feature corresponds to a contract or capability.
 
-Prefer feature boundaries that correspond to contracts or capabilities.
+Each feature should be self-contained and may include:
+- data models
+- business logic
+- supporting utilities
+- internal helpers
 
 ---
 
-## 12. Align Structure To Contracts
+## 12. Align Structure to Contracts
 
 Where possible:
 
-- each contract should map to a feature or module boundary
-- code organization should reflect contract boundaries
-- related logic should live together within the same feature
+- Each contract should map to a feature or module boundary
+- Code organization should reflect contract boundaries
+- Related logic should live together within the same feature
 
 ---
 
 ## 13. Stub-First Development
 
-COP-governed modules should first be implemented as stubs.
+All modules must first be implemented as stubs.
 
 A stub implementation:
 
-- must conform to the protocol interface
-- must simulate contract-defined behavior
-- must log inputs, outputs, and decisions where logging exists
-- must not perform real computation or external integration
+- Must conform to the protocol interface
+- Must simulate contract-defined behavior
+- Must log all inputs, outputs, and decisions
+- Must not perform real computation or external integration
 
 ---
 
-## 14. Follow The COP Execution Cycle
+## 14. Follow the COP Execution Cycle
 
-Use this sequence:
+You must follow this sequence:
 
 1. Contract Alignment
-2. Stub Module Implementation
-3. Stub System Demo
-4. Real Implementation
-5. Validation
+2. Protocol Definition
+3. Architecture Planning
+4. Stub Module Implementation
+5. Stub System Demo
+6. Real Implementation
+7. Validation
 
 ---
 
 ## 15. Enforce Green Flag Progression
 
-Do not proceed to the next stage unless the current stage is validated.
+You must not proceed to the next stage unless the current stage is validated.
 
-Contract Alignment green flag:
+### Contract Alignment Green Flag
+- Contracts are complete, consistent, and unambiguous
 
-- contracts are complete, consistent, and unambiguous
+### Stub Demo Green Flag
+- System runs end-to-end using stub modules
+- Behavior matches contract expectations
 
-Stub Demo green flag:
+### Implementation Green Flag
+- Real system produces correct outputs
+- Behavior matches stubbed system
 
-- system runs end-to-end using stub modules
-- behavior matches contract expectations
+If any stage fails:
 
-Implementation green flag:
-
-- real system produces correct outputs
-- behavior matches the validated stubbed system
-
-If any stage fails, return to the previous stage and correct the issue.
+> Return to the previous stage and correct the issue
 
 ---
 
@@ -194,9 +199,8 @@ If any stage fails, return to the previous stage and correct the issue.
 
 Real implementations must not introduce new behavior.
 
-- Stub behavior defines expected system behavior.
-- Implementation must match that behavior.
-- Any intentional behavior change must start with the contract.
+- Stub behavior defines expected system behavior
+- Implementation must match that behavior exactly
 
 ---
 
@@ -206,4 +210,6 @@ Structure must reflect behavior, not technical categories.
 
 You are not just building code.
 
-You are validating system behavior step by step before making it real.
+You are:
+
+> validating system behavior step-by-step before making it real
